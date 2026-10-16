@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f6f2">
+  <title>日常旅程｜行程規劃</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="日常旅程首頁"><span class="brand-mark" aria-hidden="true">⌖</span><span>日常旅程<span class="brand-period">.</span></span></a>
+      <div class="topbar-right"><span class="today-indicator"><span class="status-dot"></span> 今天也值得期待</span><span class="topbar-divider"></span><span class="avatar" aria-label="個人空間">日</span></div>
+    </header>
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy"><span class="eyebrow"><span class="eyebrow-line"></span> YOUR DAY, YOUR WAY</span><h1 id="page-title">把日子過成<span class="title-accent">喜歡的樣子</span><span class="title-period">。</span></h1><p class="hero-description">留一點空白給意外，也為期待的事情，好好安排時間。</p></div>
+        <div class="date-card"><span class="date-caption">TODAY IS</span><div class="date-main"><span class="date-day" id="date-day">--</span><span class="date-meta"><span id="date-weekday">星期一</span><span id="date-month">---- 年 -- 月</span></span></div><span class="date-note"><span aria-hidden="true">✳</span> 慢慢來，一切都來得及</span></div>
+      </section>
+      <section class="overview" aria-label="今日概覽">
+        <div class="overview-card"><span class="overview-icon icon-lavender" aria-hidden="true">◷</span><span class="overview-label">今日行程</span><strong class="overview-value" id="schedule-summary">03<span> 個安排</span></strong></div>
+        <div class="overview-card"><span class="overview-icon icon-peach" aria-hidden="true">✓</span><span class="overview-label">待辦事項</span><strong class="overview-value" id="todo-summary">01<span> / 03 已完成</span></strong></div>
+        <div class="overview-card"><span class="overview-icon icon-green" aria-hidden="true">↗</span><span class="overview-label">留給自己的時間</span><strong class="overview-value">2.5<span> 小時</span></strong></div>
+      </section>
+      <div class="content-grid">
+        <section class="panel schedule-panel" aria-labelledby="schedule-heading">
+          <div class="section-heading"><div><span class="section-kicker">YOUR SCHEDULE</span><h2 id="schedule-heading">今天的行程<span class="heading-count" id="schedule-count">03</span></h2></div><button class="text-button" id="jump-to-form" type="button">＋ 新增行程</button></div>
+          <p class="form-feedback" id="schedule-feedback" role="status" aria-live="polite"></p>
+          <div class="timeline" id="timeline" aria-live="polite">
+            <article class="schedule-item"><div class="time-column"><span class="time">09:00</span><span class="time-period">上午</span></div><div class="timeline-track"><span class="timeline-dot dot-violet"></span><span class="timeline-line"></span></div><div class="event-card event-violet"><div class="event-topline"><span class="event-category"><span class="category-dot"></span> 工作</span><span class="event-duration">09:00 — 10:30</span><button class="delete-event-button" type="button" aria-label="刪除每週企劃會議" title="刪除此行程">×</button></div><h3>每週企劃會議</h3><p class="event-detail">⌖　三樓小會議室</p></div></article>
+            <article class="schedule-item"><div class="time-column"><span class="time">12:30</span><span class="time-period">下午</span></div><div class="timeline-track"><span class="timeline-dot dot-orange"></span><span class="timeline-line"></span></div><div class="event-card event-orange"><div class="event-topline"><span class="event-category"><span class="category-dot"></span> 用餐</span><span class="event-duration">12:30 — 13:30</span><button class="delete-event-button" type="button" aria-label="刪除和小安吃午餐" title="刪除此行程">×</button></div><h3>和小安吃午餐</h3><p class="event-detail">⌖　巷口的日光咖啡</p></div></article>
+            <article class="schedule-item"><div class="time-column"><span class="time">16:00</span><span class="time-period">下午</span></div><div class="timeline-track"><span class="timeline-dot dot-green"></span><span class="timeline-line"></span></div><div class="event-card event-green"><div class="event-topline"><span class="event-category"><span class="category-dot"></span> 自我照顧</span><span class="event-duration">16:00 — 17:00</span><button class="delete-event-button" type="button" aria-label="刪除瑜伽與伸展" title="刪除此行程">×</button></div><h3>瑜伽與伸展</h3><p class="event-detail">⌖　家裡的客廳</p></div></article>
+          </div>
+        </section>
+        <aside class="side-column">
+          <section class="panel todo-panel" aria-labelledby="todo-heading"><div class="section-heading compact-heading"><div><span class="section-kicker">LITTLE THINGS, DONE</span><h2 id="todo-heading">待辦清單<span class="heading-count">03</span></h2></div><span class="more-icon" aria-hidden="true">···</span></div><p class="panel-subtitle">一件一件來，你做得很好。</p>
+            <div class="todo-toolbar"><span class="todo-deadline-hint">新增時請設定期限</span><button class="delete-completed-button" id="delete-completed" type="button" disabled>刪除已完成</button></div>
+            <ul class="todo-list" id="todo-list" aria-live="polite">
+              <li class="todo-item is-complete"><label class="todo-label"><input class="todo-checkbox" type="checkbox" checked><span class="custom-checkbox" aria-hidden="true"></span><span class="todo-text">整理本週工作進度</span><time class="todo-deadline" datetime="2026-10-17">10/17 到期</time></label><span class="todo-tag tag-work" data-category="work">工作</span><button class="delete-todo-button" type="button" aria-label="刪除待辦事項：整理本週工作進度" title="刪除此待辦事項">×</button></li>
+              <li class="todo-item"><label class="todo-label"><input class="todo-checkbox" type="checkbox"><span class="custom-checkbox" aria-hidden="true"></span><span class="todo-text">買一束喜歡的花</span><time class="todo-deadline" datetime="2026-10-17">10/17 到期</time></label><span class="todo-tag tag-life" data-category="life">生活</span><button class="delete-todo-button" type="button" aria-label="刪除待辦事項：買一束喜歡的花" title="刪除此待辦事項">×</button></li>
+              <li class="todo-item"><label class="todo-label"><input class="todo-checkbox" type="checkbox"><span class="custom-checkbox" aria-hidden="true"></span><span class="todo-text">讀書 20 分鐘</span><time class="todo-deadline" datetime="2026-10-17">10/17 到期</time></label><span class="todo-tag tag-self" data-category="self">自己</span><button class="delete-todo-button" type="button" aria-label="刪除待辦事項：讀書 20 分鐘" title="刪除此待辦事項">×</button></li>
+            </ul>
+            <form class="todo-form" id="todo-form"><label class="visually-hidden" for="todo-input">新增待辦事項</label><input id="todo-input" type="text" placeholder="加一件小事進清單…" maxlength="80" required><label class="visually-hidden" for="todo-category">待辦事項類別</label><select id="todo-category" name="category" aria-label="待辦事項類別"><option value="life">生活</option><option value="work">工作</option><option value="self">自己</option></select><label class="visually-hidden" for="todo-deadline-input">待辦事項最後期限</label><input id="todo-deadline-input" type="date" aria-label="最後期限" required><button type="submit" aria-label="新增待辦事項">＋</button></form>
+            <p class="form-feedback" id="todo-feedback" role="status" aria-live="polite"></p>
+          </section>
+          <section class="panel add-panel" id="add-event" aria-labelledby="form-heading"><div class="section-heading compact-heading"><div><span class="section-kicker">MAKE A LITTLE PLAN</span><h2 id="form-heading">新增行程</h2></div><span class="form-sparkle" aria-hidden="true">✳</span></div><p class="panel-subtitle">為接下來的日子，安排一點期待。</p>
+            <form id="event-form" class="event-form"><div class="form-field"><label for="event-title">行程名稱</label><input id="event-title" name="title" type="text" placeholder="例如：和朋友喝咖啡" maxlength="60" required></div><div class="form-row"><div class="form-field"><label for="event-time">開始時間</label><input id="event-time" name="time" type="time" value="14:00" required></div><div class="form-field"><label for="event-category">分類</label><select id="event-category" name="category"><option value="個人">個人</option><option value="工作">工作</option><option value="用餐">用餐</option><option value="自我照顧">自我照顧</option></select></div></div><div class="form-field"><label for="event-location">地點 <span class="optional">選填</span></label><input id="event-location" name="location" type="text" placeholder="在哪裡碰面呢？" maxlength="80"></div><button class="submit-button" type="submit"><span>把行程排進今天</span><span aria-hidden="true">↗</span></button></form>
+          </section>
+          <p class="little-reminder"><span aria-hidden="true">✿</span> 別忘了，休息也是行程的一部分。</p>
+        </aside>
+      </div>
+    </main>
+    <footer class="footer"><span>用一點點計畫，換一整天從容。</span><span>MADE FOR YOUR EVERYDAY <span class="footer-heart">♥</span></span></footer>
+  </div>
+</body>
+</html>
+
+          </section>
